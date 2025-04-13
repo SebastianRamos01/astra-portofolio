@@ -1,0 +1,34 @@
+<header class="px-5 lg:px-10 h-20 fixed top-0 w-full z-10 mix-blend-difference text-white">
+    <div class="flex justify-between items-center h-full">
+        <h1 id="logo" class="-space-x-5 flex origin-top-left">
+            <p id="first-name" class="uppercase font-black text-xl">Lyra</p>
+            <p id="second-name" class="font-sacramento text-5xl">Astra</p>
+        </h1>
+        <div>
+            <div class="text-xs">For Adquisitions :</div>
+            <ul class="flex gap-4 font-medium uppercase text-xs">
+                <li>Instagram</li>
+                <li>Twitter</li>
+                <li>Email</li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<script type="module">
+	import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
+
+    const container = document.querySelector('#main-cont')
+
+    const firstName = document.querySelector('#first-name')
+    animate(firstName, { opacity: [0, 1]}, {delay: 0.5})
+    
+    const secondName = document.querySelector('#second-name') 
+    animate(secondName, { opacity: [0, 1]}, {delay: 1})
+
+    const logo = document.querySelector('#logo')
+    const animation = animate(logo, { scale: [1.75, 1], y: ['40px', '4px']},
+    { ease: "linear" })
+    scroll(
+    animation, {target:container, offset:['0%', '100%']})
+</script>

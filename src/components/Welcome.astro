@@ -1,0 +1,19 @@
+---
+import { animate, scroll } from "motion"
+---
+
+<div class="h-screen">
+	<ul class="flex h-full w-full">
+		{[Array.from({ length: 16 }, (_, i) => (
+			<li class="text-gray-700 list-none bg-amber-100 w-[7%]">
+				Child {i}
+			</li>
+		))]}
+	</ul>
+</div>
+
+<script type="module">
+	import { animate } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
+  
+	animate('li ', { height: [0, '100%'] }, { duration: 0.25, delay: (i) => i * 0.25 })
+</script>
